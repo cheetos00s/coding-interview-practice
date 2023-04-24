@@ -1,0 +1,35 @@
+function sym(...arr) {
+  let args = [];
+  let aux = arr;
+  for(var i = 0; i < arr.length - 1; i++){
+    console.log(aux[i])
+    args = args.concat(ciclo(aux[i], aux[i+1]));
+  }
+  console.log(args)
+  return args;
+}
+
+function ciclo(arr1 , arr2){
+  let x;
+  let arr = [];
+  for(var i = 0 ; i < arr1.length; i++){
+    x = arr1[i];
+    console.log(arr2.includes(x));
+    if(!arr2.includes(x)){
+      if(!arr.includes(x)){
+        arr.push(x);
+      }
+    }
+  }
+  for(var i = 0 ; i < arr2.length; i++){
+    x = arr2[i];
+    console.log(arr1.includes(x));
+    if(!arr1.includes(x)){
+      if(!arr.includes(x)){
+        arr.push(x);
+      }
+    }
+  }
+  return arr;
+}
+sym([1, 2, 5], [2, 3, 5], [3, 4, 5]);
